@@ -1,0 +1,32 @@
+/ {
+
+	chosen {
+	       zephyr,console=&cdc_acm_uart0;
+	};
+
+	aliases {
+		stepper = &a4988;
+	};
+
+	a4988: a4988 {
+		compatible = "allegro,a4988";
+		status = "okay";
+
+		step-gpios = <&gpiob 45 GPIO_ACTIVE_HIGH>;
+		dir-gpios = <&gpiob 46 GPIO_ACTIVE_HIGH>;
+		en-gpios = <&gpioa 38 GPIO_ACTIVE_LOW>;
+		sleep-gpios = <&gpiob 43 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpiob 42 GPIO_ACTIVE_HIGH>;
+		msx-gpios = <&gpiob 39 GPIO_ACTIVE_HIGH>,
+		            <&gpiob 40 GPIO_ACTIVE_HIGH>,
+		            <&gpiob 41 GPIO_ACTIVE_HIGH>;
+		micro-step-res = <16>;
+	};
+};
+
+&zephyr_udc0 {
+	     cdc_acm_uart0: cdc_acm_uart0 {
+	     	compatible = "zephyr,cdc-acm-uart";
+		label = "CDC_ACM_0";
+	     };
+};
