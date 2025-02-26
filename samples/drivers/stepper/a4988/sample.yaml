@@ -1,0 +1,7 @@
+sample:
+  name: A4988 Stepper Sample
+
+tests:
+  sample.stepper.a4988:
+    harness: stepper
+    tags: stepper

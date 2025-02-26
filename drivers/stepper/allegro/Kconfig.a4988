@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: Copyright (c) 2025 Marvin Ouma
+# SPDX-License-Identifier: Apache-2.0
+
+config A4988
+       bool "A4988 DMOS Microstepping Driver"
+       default y
+       depends on DT_HAS_ALLEGRO_A4988_ENABLED
+       select STEPPER_ALLEGRO
+       select STEP_DIR_STEPPER
+       select STEPPER_STEP_DIR_GENERATE_ISR_SAFE_EVENTS
+       help
+        Enable A4988 DMOS Microstepping Driver.

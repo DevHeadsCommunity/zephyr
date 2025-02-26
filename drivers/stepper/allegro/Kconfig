@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: Copyright (c) 2025 Marvin Ouma
+# SPDX-License-Identifier: Apache-2.0
+
+config STEPPER_ALLEGRO
+	bool
+	depends on STEPPER
+
+rsource "Kconfig.a4988"
