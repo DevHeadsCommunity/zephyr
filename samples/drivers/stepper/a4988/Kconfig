@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: Copyright (c) 2025 Marvin Ouma
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "A4988 sample application"
+
+config STEPS_PER_REV
+       int "Steps per revolution"
+       default 200
+
+
+source "Kconfig.zephyr"
